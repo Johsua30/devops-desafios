@@ -1,0 +1,12 @@
+services:
+  mtg-wishlist-app:
+    image: johsua30/mtg-wishlist-app:1.0 
+    container_name: mtg-wishlist-app
+    ports:
+      - "8080:80"
+    volumes: 
+      - appdata:/usr/local/apache2/htdocs/
+    restart: always
+
+volumes:
+  appdata:

@@ -11,3 +11,7 @@ El link al repositorio de Docker hub con la imagen es: https://hub.docker.com/r/
 Correr el siguiente comando desde la carpeta en la que se encuentra el archivo docker-compose.yaml
 
 ``` docker compose -f docker-compose.yaml up -d ```
+
+## Acceder a la app:
+
+Ingresar en un navegador a: localhost:8085

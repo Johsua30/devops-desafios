@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'johsua30/mtg-wishlist-app'
-        DOCKER_TAG = '1.0'
+        DOCKER_TAG = 'latest'
         DOCKER_CREDENTIALS_ID = 'dockerhub_id' 
     }
 
@@ -19,12 +19,6 @@ pipeline {
                 script {
                     docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                 }
-            }
-        }
-
-        stage('Run') {
-            steps {
-                sh "docker compose -f 'docker-compose.yaml' up -d --build"
             }
         }
 

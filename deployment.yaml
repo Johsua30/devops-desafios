@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mtg-wishlist-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mtg-wishlist
+  template:
+    metadata:
+      labels:
+        app: mtg-wishlist
+    spec:
+      containers:
+        - name: mtg-wishlist-container
+          image: mtg-wishlist-app:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80

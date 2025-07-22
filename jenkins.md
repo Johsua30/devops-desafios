@@ -1,23 +1,3 @@
-# Aplicación Web de notas para Magic the Gathering.
-
-Esta es una pequeña aplicación web para guardar listas de cartas que necesitamos o queremos recordar con la posibilidad de pedir una carta al azar de la API de Scryfall para inspirarnos.
-
-### Imagen en Docker hub:
-
-El link al repositorio de Docker hub con la imagen es: https://hub.docker.com/r/johsua30/mtg-wishlist-app
-
-### Construir la app:
-
-Correr el siguiente comando desde la carpeta en la que se encuentra el archivo docker-compose.yaml
-
-``` docker compose -f docker-compose.yaml up -d ```
-
-### Acceder a la app:
-
-Ingresar en un navegador a: localhost:8085
-
-
-
 # Correr la aplicación con Jenkins
 
 Primero se debe correr Jenkins desde un contenedor y configurarlo.
@@ -80,24 +60,3 @@ Ingresar a localhost:8080 desde un navegador y seguir los pasos iniciales.
 Correr el comando ``` docker run --name wishlist-app -d -p 8085:80 johsua30/mtg-wishlist-app ```
 Ingresar a localhost:8085
 
-
-# Despliegue en Kubernetes
-
-Clonar el repositorio https://github.com/Johsua30/devops-desafios.git a nuestra PC.
-
-- Crear la imagen de Docker
-` docker build -t mtg-wishlist-app:1.0 . `
-
-- Desplegar en kubernetes
-` kubectl apply -f deployment.yaml `
-` kubectl apply -f service.yaml `
-
-- Verificar que el pod esté corriendo
-` kubectl get pods `
-
-- Acceder a la aplicación
-Ingresar desde el navegador a ` localhost:30001 `
-
-- Eliminar todo
-` kubectl delete -f service.yaml `
-` kubectl delete -f deployment.yaml `

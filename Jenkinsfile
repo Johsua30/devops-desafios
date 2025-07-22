@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'johsua30/mtg-wishlist-app'
-        DOCKER_TAG = 'latest'
+        DOCKER_TAG = '1.0'
         DOCKER_CREDENTIALS_ID = 'dockerhub_id' 
     }
 
